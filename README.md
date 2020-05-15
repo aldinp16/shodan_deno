@@ -5,9 +5,9 @@ Simple [Shodan](https://developer.shodan.io/api) API Wrapper For Deno.
 import  Shodan  from  'http://aldi.dev/shodan_deno/mod.ts'
 
 const shodan = new  Shodan('apikey')
-const response = shodan.search('laravel port:80')
+const response = await shodan.search('laravel port:80')
 // or with options
-const response = shodan.host('1.1.1.1', { history: true, minify: true })
+const response = await shodan.host('1.1.1.1', { history: true, minify: true })
 ```
 ## To do
 * [ ] Add more action
