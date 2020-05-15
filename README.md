@@ -1,5 +1,5 @@
 # Shodan Deno
-Simple [Shodan](https://developer.shodan.io/api) Wrapper API For Deno.
+Simple [Shodan](https://developer.shodan.io/api) API Wrapper For Deno.
 ## Usage
 ```typescript
 import  Shodan  from  'http://aldi.dev/shodan_deno/mod.ts'
