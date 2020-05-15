@@ -13,4 +13,4 @@ const response = await shodan.host('1.1.1.1', { history: true, minify: true })
 * [ ] Add more action
 * [ ] CI
 ## License
-[MIT](https://git.io/JfRST) © [Aldi Nugraha](https://github.com/KSXGitHub)
+[MIT](https://git.io/JfRST) © [Aldi Nugraha](https://github.com/aldinp16)
