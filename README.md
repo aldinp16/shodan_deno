@@ -31,7 +31,7 @@ Returns all services that have been found on the given host IP.
 Search using the same query syntax as the website and use facets to get summary information for different properties.
 - `query` [string] Shodan search query. The provided string is used to search the database of banners in Shodan, with the additional option to provide filters inside the search query using a `"filter:value"` format. For example, the following search query would find Apache webservers located in Germany: `"apache country:DE"`
 - `opt?` [IShodanSearchOpt]
-  - `facets?` [string] A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. "country:100" to get the top 100 countries for a search query).
+  - `facets?` [string] A comma-separated list of properties to get summary information on. Property names can also be in the format of "property:count", where "count" is the number of facets that will be returned for a property (i.e. `"country:100"` to get the top 100 countries for a search query).
   - `page?` [number] The page number to page through results 100 at a time (default: 1) 
   - `minify?` [boolean] True or False; whether or not to truncate some of the larger fields (default: True) 
 ## To Do
