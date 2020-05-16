@@ -16,6 +16,7 @@ const response = await shodan.host('1.1.1.1', { history: true, minify: true })
 ```
 ## To do
 * [ ] Add more action
+* [ ] Error handler (invalid apikey & rate limit)
 * [ ] CI
 ## License
 [MIT](https://git.io/JfRST) © [Aldi Nugraha](https://github.com/aldinp16)
