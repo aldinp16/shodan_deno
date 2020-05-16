@@ -45,7 +45,7 @@ interface IMatches {
   isp: string;
   asn: string;
   hostnames: any[];
-  location: ILocation[];
+  location: ILocation;
   ip: string;
   domains: any[];
   org: string;
