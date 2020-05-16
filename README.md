@@ -11,6 +11,9 @@ import Shodan from 'http://aldi.dev/shodan_deno/mod.ts'
 // use denopkg.com to use specific version
 import Shodan from 'https://denopkg.com/aldinp16/shodan_deno@v0.2.0/mod.ts'
 
+// use deno.land/x/ to use specific branch
+import Shodan from 'https://deno.land/x/shodan_deno@master/mod.ts'
+
 const shodan = new Shodan('apikey')
 const response = await shodan.search('laravel port:80')
 
