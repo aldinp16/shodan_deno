@@ -6,7 +6,7 @@ Simple [Shodan](https://developer.shodan.io/api) API Wrapper For Deno.
 import Shodan from 'http://aldi.dev/shodan_deno/mod.ts'
 
 // use denopkg.com to use specific version
-import Shodan from 'https://denopkg.com/aldinp16/shodan_deno@v0.1.0/mod.ts'
+import Shodan from 'https://denopkg.com/aldinp16/shodan_deno@v0.2.0/mod.ts'
 
 const shodan = new Shodan('apikey')
 const response = await shodan.search('laravel port:80')
