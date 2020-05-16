@@ -65,6 +65,13 @@ export interface IShodanSearchOpt {
   minify?: boolean;
 }
 
+export interface IShodanProfile {
+  member: boolean;
+  credits: number;
+  display_name: string;
+  created: Date;
+}
+
 export interface IShodanHost {
   region_code?: any;
   ip: string;

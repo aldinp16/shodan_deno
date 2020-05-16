@@ -1,6 +1,6 @@
 import { stub, Stub, assertEquals } from "./dev_deps.ts";
 import Shodan from "./mod.ts";
-
+import { assert } from "https://deno.land/std@0.50.0/testing/asserts.ts";
 Deno.test("host() assert", async () => {
   const shodan = new Shodan("somekey");
   const mockResponse = {
@@ -31,7 +31,7 @@ Deno.test("host() assert", async () => {
   assertEquals(await shodan.host("127.0.01"), mockResponse);
 });
 
-Deno.test("search() assert", () => {
+Deno.test("search() assert", async () => {
   const shodan = new Shodan("somekey");
   const mockResponse = {
     matches: [{
@@ -63,5 +63,18 @@ Deno.test("search() assert", () => {
   };
 
   const search: Stub<Shodan> = stub(shodan, "search", () => mockResponse);
-  assertEquals(shodan.search("laravel port:80"), mockResponse);
+  assertEquals(await shodan.search("laravel port:80"), mockResponse);
+});
+
+Deno.test("profile() assert", async () => {
+  const shodan = new Shodan("somekey");
+  const mockResponse = {
+    "member": true,
+    "credits": 42,
+    "display_name": "Woyo",
+    "created": "2014-04-15T07:34:40",
+  };
+
+  const profile: Stub<Shodan> = stub(shodan, "profile", () => mockResponse);
+  assertEquals(await shodan.profile(), mockResponse);
 });

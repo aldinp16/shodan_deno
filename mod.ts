@@ -3,6 +3,7 @@ import {
   IShodanHostOpt,
   IShodanSearch,
   IShodanHost,
+  IShodanProfile,
 } from "./types.ts";
 import { queryParam } from "./utils.ts";
 
@@ -11,6 +12,13 @@ export default class Shodan {
   constructor(
     private key: string,
   ) {}
+
+  async profile(): Promise<IShodanProfile> {
+    const qs = { key: this.key };
+    return await (
+      await fetch(`${this.url}/account/profile?${queryParam(qs)}`)
+    ).json();
+  }
 
   async host(ip: string, opt?: IShodanHostOpt): Promise<IShodanHost> {
     const qs = { key: this.key, ...opt };
