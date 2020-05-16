@@ -1,4 +1,7 @@
 # Shodan Deno
+
+![ci](https://github.com/aldinp16/shodan_deno/workflows/ci/badge.svg)
+
 Simple [Shodan](https://developer.shodan.io/api) API Wrapper For Deno.
 ## Usage
 ```typescript
