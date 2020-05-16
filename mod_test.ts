@@ -78,3 +78,9 @@ Deno.test("profile() assert", async () => {
   const profile: Stub<Shodan> = stub(shodan, "profile", () => mockResponse);
   assertEquals(await shodan.profile(), mockResponse);
 });
+
+Deno.test("myIP() assert", async () => {
+  const shodan = new Shodan("somekey");
+  const myIP: Stub<Shodan> = stub(shodan, "myIP", () => `"74.125.227.230"`);
+  assertEquals(await shodan.myIP(), `"74.125.227.230"`);
+});

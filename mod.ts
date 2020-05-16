@@ -20,6 +20,13 @@ export default class Shodan {
     ).json();
   }
 
+  async myIP(): Promise<string> {
+    const qs = { key: this.key };
+    return await (
+      await fetch(`${this.url}/tools/myip?${queryParam(qs)}`)
+    ).text();
+  }
+
   async host(ip: string, opt?: IShodanHostOpt): Promise<IShodanHost> {
     const qs = { key: this.key, ...opt };
     return await (
