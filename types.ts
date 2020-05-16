@@ -54,6 +54,12 @@ interface IMatches {
   ip_str: string;
 }
 
+interface IUsageLimits {
+  scan_credits: number;
+  query_credits: number;
+  monitored_ips: number;
+}
+
 export interface IShodanHostOpt {
   history?: boolean;
   minify?: boolean;
@@ -70,6 +76,15 @@ export interface IShodanProfile {
   credits: number;
   display_name: string;
   created: Date;
+}
+
+export interface IShodanApiInfo extends IUsageLimits {
+  usage_limits: IUsageLimits;
+  plan: string;
+  https: boolean;
+  unlocked: boolean;
+  unlocked_left: number;
+  telnet: boolean;
 }
 
 export interface IShodanHost {

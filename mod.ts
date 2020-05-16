@@ -4,6 +4,7 @@ import {
   IShodanSearch,
   IShodanHost,
   IShodanProfile,
+  IShodanApiInfo,
 } from "./types.ts";
 import { queryParam } from "./utils.ts";
 
@@ -25,6 +26,13 @@ export default class Shodan {
     return await (
       await fetch(`${this.url}/tools/myip?${queryParam(qs)}`)
     ).text();
+  }
+
+  async apiInfo(): Promise<IShodanApiInfo> {
+    const qs = { key: this.key };
+    return await (
+      await fetch(`${this.url}/api-info?${queryParam(qs)}`)
+    ).json();
   }
 
   async host(ip: string, opt?: IShodanHostOpt): Promise<IShodanHost> {

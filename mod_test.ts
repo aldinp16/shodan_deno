@@ -84,3 +84,21 @@ Deno.test("myIP() assert", async () => {
   const myIP: Stub<Shodan> = stub(shodan, "myIP", () => `"74.125.227.230"`);
   assertEquals(await shodan.myIP(), `"74.125.227.230"`);
 });
+
+Deno.test("apiInfo() assert", async () => {
+  const shodan = new Shodan("somekey");
+  const mockResponse = {
+    scan_credits: 100,
+    usage_limits: { scan_credits: 100, query_credits: 100, monitored_ips: 16 },
+    plan: "dev",
+    https: false,
+    unlocked: true,
+    query_credits: 100,
+    monitored_ips: 0,
+    unlocked_left: 100,
+    telnet: false,
+  };
+
+  const profile: Stub<Shodan> = stub(shodan, "apiInfo", () => mockResponse);
+  assertEquals(await shodan.apiInfo(), mockResponse);
+});
