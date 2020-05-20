@@ -16,36 +16,31 @@ export class Shodan {
 
   async profile(): Promise<IShodanProfile> {
     const qs = { key: this.key };
-    return await (
-      await fetch(`${this.url}/account/profile?${queryParam(qs)}`)
-    ).json();
+    return fetch(`${this.url}/account/profile?${queryParam(qs)}`)
+      .then((resp) => resp.json());
   }
 
   async myIP(): Promise<string> {
     const qs = { key: this.key };
-    return await (
-      await fetch(`${this.url}/tools/myip?${queryParam(qs)}`)
-    ).text();
+    return fetch(`${this.url}/tools/myip?${queryParam(qs)}`)
+      .then((resp) => resp.json());
   }
 
   async apiInfo(): Promise<IShodanApiInfo> {
     const qs = { key: this.key };
-    return await (
-      await fetch(`${this.url}/api-info?${queryParam(qs)}`)
-    ).json();
+    return fetch(`${this.url}/api-info?${queryParam(qs)}`)
+      .then((resp) => resp.json());
   }
 
   async host(ip: string, opt?: IShodanHostOpt): Promise<IShodanHost> {
     const qs = { key: this.key, ...opt };
-    return await (
-      await fetch(`${this.url}/shodan/host/${ip}?${queryParam(qs)}`)
-    ).json();
+    return fetch(`${this.url}/shodan/host/${ip}?${queryParam(qs)}`)
+      .then((resp) => resp.json());
   }
 
   async search(query: string, opt?: IShodanSearchOpt): Promise<IShodanSearch> {
     const qs = { key: this.key, query, ...opt };
-    return await (
-      await fetch(`${this.url}/shodan/host/search?${queryParam(qs)}`)
-    ).json();
+    return fetch(`${this.url}/shodan/host/search?${queryParam(qs)}`)
+      .then((resp) => resp.json());
   }
 }
