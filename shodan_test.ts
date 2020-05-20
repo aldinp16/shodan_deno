@@ -1,6 +1,6 @@
 import { stub, Stub, assertEquals } from "./dev_deps.ts";
-import Shodan from "./mod.ts";
-import { assert } from "https://deno.land/std@0.50.0/testing/asserts.ts";
+import { Shodan } from "./shodan.ts";
+
 Deno.test("host() assert", async () => {
   const shodan = new Shodan("somekey");
   const mockResponse = {
