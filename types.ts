@@ -1,4 +1,4 @@
-interface ILocation {
+export interface ILocation {
   city?: any;
   region_code?: any;
   area_code?: any;
@@ -11,9 +11,9 @@ interface ILocation {
   latitude: number;
 }
 
-interface IOpts {}
+export interface IOpts {}
 
-interface IData {
+export interface IData {
   product: string;
   os?: any;
   timestamp: Date;
@@ -30,16 +30,16 @@ interface IData {
   opts: IOpts;
 }
 
-interface IOrg {
+export interface IOrg {
   count: number;
   value: string;
 }
 
-interface IFacets {
+export interface IFacets {
   org: IOrg[];
 }
 
-interface IMatches {
+export interface IMatches {
   os?: any;
   timestamp: Date;
   isp: string;
@@ -54,7 +54,7 @@ interface IMatches {
   ip_str: string;
 }
 
-interface IUsageLimits {
+export interface IUsageLimits {
   scan_credits: number;
   query_credits: number;
   monitored_ips: number;
