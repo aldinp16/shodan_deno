@@ -6,7 +6,7 @@ Simple [Shodan](https://developer.shodan.io/api) API Wrapper For Deno.
 ## Usage
 ```typescript
 // use denopkg.com
-import { Shodan } from 'https://denopkg.com/aldinp16/shodan_deno@v0.2.0/mod.ts'
+import { Shodan } from 'https://denopkg.com/aldinp16/shodan_deno@v0.3.0/mod.ts'
 // use deno.land/x/
 import { Shodan } from 'https://deno.land/x/shodan_deno@master/mod.ts'
 
